@@ -25,9 +25,9 @@
 ...             else:
 ...                 print("Error: Division by zero is not allowed.")
 ...         else:
-...             print("Invalid operation. Please enter one of +, -, *, /.")
+...             print("Invalid operation. enter one operation +, -, *, /.")
 ...     except ValueError:
-...         print("Invalid input. Please enter numeric values for the numbers.")
+...         print("Invalid input. enter a numeric values for the numbers.")
 ...
 >>> # Run the calculator
 >>> calculator()
