@@ -1,0 +1,67 @@
+def calculate_discount(price, discount_percent):
+    """
+    Calculate the final price after applying a discount if the discount 
+    percentage is 20% or higher.
+    
+    Parameters:
+        price (float): The original price of the item.
+        discount_percent (float): The discount percentage.
+
+    Returns:
+        float: The final price after applying the discount, or the original price 
+               if the discount is less than 20%.
+    """
+    if discount_percent >= 20:
+        discount_amount = price * (discount_percent / 100)
+        final_price = price - discount_amount
+        return final_price
+    return price
+
+# simulations
+def calculate_discount(price, discount_percent):
+    if discount_percent >= 20:
+        discount_amount = price * (discount_percent / 100)
+        final_price = price - discount_amount
+        return final_price
+    return price
+
+cases = [
+    {"price": 100.0, "discount_percent": 25},  # Discount applied
+    {"price": 200.0, "discount_percent": 15},  # No discount
+    {"price": 50.0, "discount_percent": 20},   # Borderline case
+    {"price": 75.0, "discount_percent": 10},   # No discount
+]
+
+for k, case in enumerate(cases, start=1):
+    original_price = case["price"]
+    discount_percent = case["discount_percent"]
+    final_price = calculate_discount(original_price, discount_percent)
+    
+    print(f"case {k}:")
+    print(f"  Original Price: ${original_price:.2f}")
+    print(f"  Discount Percent: {discount_percent}%")
+    if final_price < original_price:
+        print(f"  Final Price after Discount: ${final_price:.2f}\n")
+    else:
+        print(f"  No discount applied. Final Price: ${original_price:.2f}\n")
+
+# Output
+Case 1:
+  Original Price: $100.00
+  Discount Percent: 25%
+  Final Price after Discount: $75.00
+
+Case 2:
+  Original Price: $200.00
+  Discount Percent: 15%
+  No discount applied. Final Price: $200.00
+
+Case 3:
+  Original Price: $50.00
+  Discount Percent: 20%
+  Final Price after Discount: $40.00
+
+Case 4:
+  Original Price: $75.00
+  Discount Percent: 10%
+  No discount applied. Final Price: $75.00
